@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Chrome-localhost-cookies</title>
+</head>
+<body>
+<h1>Chrome localhost cookies test</h1>
+<label for="result">Result</label><br/>
+<textarea id="result" style="width:20em">
+
+</textarea>
+<script>
+    fetch("/ping", {credentials: 'include'}).then(function (res) {
+        return res.text();
+    }).then(function (text) {
+        document.getElementById("result").innerText = text;
+    }).catch(function (err) {
+        console.log(err);
+        alert('error');
+    })
+</script>
+</body>
+</html>
